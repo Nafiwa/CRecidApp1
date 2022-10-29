@@ -1,19 +1,19 @@
 <?php
 
 include_once("conexion.php");
-$con=mysqli_connect('localhost','root','','crecid');
+$con = mysqli_connect('localhost', 'root', '', 'crecid');
 
 $sqlSelect = "SELECT * FROM hospital";
-$resultSelect=mysqli_query($con,$sqlSelect);
+$resultSelect = mysqli_query($con, $sqlSelect);
 
 
 $sqlSelectTU = "SELECT * FROM tipousuario";
-$resultSelectTU =mysqli_query($con,$sqlSelectTU);
+$resultSelectTU = mysqli_query($con, $sqlSelectTU);
 
 
 
 $sqlSelectU = "SELECT * FROM usuarios";
-$resultSelectUsuarios =mysqli_query($con,$sqlSelectU);
+$resultSelectUsuarios = mysqli_query($con, $sqlSelectU);
 
 
 
@@ -23,10 +23,10 @@ $resultSelectUsuarios =mysqli_query($con,$sqlSelectU);
 <html>
 
 <head>
-    
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"&amp;gt;>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" &amp;gt;>
 
 
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
@@ -41,7 +41,7 @@ $resultSelectUsuarios =mysqli_query($con,$sqlSelectU);
     <div class="main">
         <div class="menu">
             <a href="#Internos">
-            <img src="../img/logoCrecid.png"/>
+                <img src="../img/logoCrecid.png" />
             </a>
             <br /><br /><br />
             <button class="tablinks" onclick="tabs(event, 'Usuarios' )">Usuarios</button>
@@ -65,88 +65,46 @@ $resultSelectUsuarios =mysqli_query($con,$sqlSelectU);
                         <div class="content-buttons"><a href="#Internos" id="close-button">Aceptar</a></div>
                     </div>
                 </div>-->
-                <div class="titles">
+                <div class="title">
                     <h1>Usuarios</h1>
                 </div>
                 <button class="AnadirInt" onclick="Usuario()">Añadir nuevo Usuario &#10133;</button>
-                <div class="izq">
-                    <div>
-                        <h2>Tipo de Usuarios en el Sistema </h2>
-                    </div>
+                <div class="abajo">
                     <!--empieza tabla de Tipo de usuarios registrados-->
 
-                <div style="overflow-x: auto;">
-        <TABLE CLASS="TABLA-RESPONSIVA">
-            <thead>
-                <tr>
-                    <th class="th-responsiva"><strong>ID</strong></th>  
-                    <th class="th-responsiva"><strong>Tipo</strong></th>
-                    <th class="th-responsiva"></th>
-                    <th class="th-responsiva"></th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <?php
-                while($mostrar=mysqli_fetch_array($resultSelectTU)){
-                    ?>
-                    <tr>
-                        <td class="th-responsiva"><?php echo $mostrar['idTUsuario'] ?></td>
-                        <td class="th-responsiva"><?php echo $mostrar['Tipo'] ?></td>
-
-                        <td class="th-responsiva"><a href="modificarTipoUsuario.php?  
-                        tipoUsuario=<?php echo $mostrar['idTUsuario'] ?> &
-                        tipo=<?php echo $mostrar['Tipo'] ?>">
-                            <img src="../img/icono.png" height="20px" width="20px">
-                            </a></td>
-
-                        <td class="th-responsiva"><a href="EliminarTipoUsuario.php?
-                        hospital=<?php echo $mostrar['idTUsuario'] ?>">
-                            <img src="../img/trash-var-flat.png" height="20px" width="20px">
-                        </a></td>
-                    </tr>
-                    <?php
-            
-                    }
-                    ?>
-            </tbody>
-        </TABLE>
-        </div>      
                     <br><br>
-<!--empieza tabla de usuarios registrados-->
-                        
-                    <h2>Usuarios</h2>
+                    <!--empieza tabla de usuarios registrados-->
+
                     <div style="overflow-x: auto;">
-        <TABLE CLASS="TABLA-RESPONSIVA">
-            <thead>
-                <tr>
-                    <th class="th-responsiva"><strong>Usuario</strong></th>  
-                    <th class="th-responsiva"><strong>Contrasena</strong></th>
-                    <th class="th-responsiva"><strong>Nombre</strong></th>
-                    <th class="th-responsiva"><strong>Apellido Paterno</strong></th>
-                    <th class="th-responsiva"><strong>Apellido Materno</strong></th>
-                    <th class="th-responsiva"><strong>Tipo de Usuario</strong></th>
-                    <th class="th-responsiva"><strong>Estatus</strong></th>
-                    <th class="th-responsiva"></th>
-                    <th class="th-responsiva"></th>
-                </tr>
-            </thead>
+                        <TABLE CLASS="TABLA-RESPONSIVA">
+                            <thead>
+                                <tr>
+                                    <th class="th-responsiva">Usuario</th>
+                                    <th class="th-responsiva">Contrasena</th>
+                                    <th class="th-responsiva">Nombre</th>
+                                    <th class="th-responsiva">Apellido Paterno</th>
+                                    <th class="th-responsiva">Apellido Materno</th>
+                                    <th class="th-responsiva">Tipo de Usuario</th>
+                                    <th class="th-responsiva">Estatus</strong></th>
+                                    <th class="th-responsiva"></th>
+                                    <th class="th-responsiva"></th>
+                                </tr>
+                            </thead>
 
-            <tbody>
-                <?php
-                mysqli_autocommit($con,FALSE);
-                while($mostrar=mysqli_fetch_array($resultSelectUsuarios)){
-                    ?>
-                    <tr>
-                        <td class="th-responsiva"><?php echo $mostrar['Usuario'] ?></td>
-                        <td class="th-responsiva"><?php echo $mostrar['Contrasena'] ?></td>
-                        <td class="th-responsiva"><?php echo $mostrar['Nombres'] ?></td>
-                        <td class="th-responsiva"><?php echo $mostrar['A_Paterno'] ?></td>
-                        <td class="th-responsiva"><?php echo $mostrar['A_Materno'] ?></td>
-                        <td class="th-responsiva"><?php echo $mostrar['idTUsuario'] ?></td>
-                        <td class="th-responsiva"><?php echo $mostrar['Estatus'] ?></td>
-
-                        <td class="th-responsiva"><a href="modificarUsuarios.php?  
+                            <tbody>
+                                <?php
+                                mysqli_autocommit($con, FALSE);
+                                while ($mostrar = mysqli_fetch_array($resultSelectUsuarios)) {
+                                ?>
+                                    <tr>
+                                        <td class="th-responsiva"><?php echo $mostrar['Usuario'] ?></td>
+                                        <td class="th-responsiva"><?php echo $mostrar['Contrasena'] ?></td>
+                                        <td class="th-responsiva"><?php echo $mostrar['Nombres'] ?></td>
+                                        <td class="th-responsiva"><?php echo $mostrar['A_Paterno'] ?></td>
+                                        <td class="th-responsiva"><?php echo $mostrar['A_Materno'] ?></td>
+                                        <td class="th-responsiva"><?php echo $mostrar['idTUsuario'] ?></td>
+                                        <td class="th-responsiva"><?php echo $mostrar['Estatus'] ?></td>
+                                        <td class="th-responsiva"><a href="modificarUsuarios.php?  
                         usuario=<?php echo $mostrar['Usuario'] ?> &
                         contrasena=<?php echo $mostrar['Contrasena'] ?> &
                         nombre=<?php echo $mostrar['Nombres'] ?> &
@@ -154,116 +112,110 @@ $resultSelectUsuarios =mysqli_query($con,$sqlSelectU);
                         apellidoM=<?php echo $mostrar['A_Materno'] ?> &
                         id=<?php echo $mostrar['idTUsuario'] ?> &
                         estatus=<?php echo $mostrar['Estatus'] ?>">
-
-                            <img src="../img/icono.png" height="20px" width="20px">
-                            </a></td>
-
-                        <td class="th-responsiva"><a href="EliminarUsuarios.php?
+                                                <img src="../img/icono.png" height="20px" width="20px">
+                                            </a></td>
+                                        <td class="th-responsiva"><a href="EliminarUsuarios.php?
                         hospital=<?php echo $mostrar['Usuario'] ?>">
-                            <img src="../img/trash-var-flat.png" height="20px" width="20px">
-                        </a></td>
-                    </tr>
-                    <?php
-            
-                    }
-                    ?>
-            </tbody>
-        </TABLE>
-        </div>      
-<!--termina tabla de usuarios registrados-->
+                                                <img src="../img/trash-var-flat.png" height="20px" width="20px">
+                                            </a></td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
+                            </tbody>
+                        </TABLE>
+                    </div>
+                    <!--termina tabla de usuarios registrados-->
 
-                </div>
-                <div class="der">
-                        
                 </div>
             </div>
-            
+
             <div id="Hospitales" class="menuContent" style="display: none;">
-            
-                <div class="titles">
+
+                <div class="title">
                     <h1>Hospitales</h1>
                 </div>
-            <br><br>
-            <button onclick="Hospital()">Añadir Hospital</button>
-            <br><br>
+                <br><br>
+                <button onclick="Hospital()">Añadir Hospital</button>
+                <br><br>
 
-            <div >
-            <form action="BuscarHospitales.php" method="post">
-                <input type="text" name="buscar">
-                <input type="submit" value="Buscar">
-            </form>
-        </div>
+                <div>
+                    <form action="BuscarHospitales.php" method="post">
+                        <input type="text" name="buscar">
+                        <input type="submit" value="Buscar">
+                    </form>
+                </div>
 
-        <BR>
-            <div style="overflow-x: auto;" id="results">
-            
-        <TABLE CLASS="TABLA-RESPONSIVA" id="tabla">
-            
-            <thead>
-                <tr>
-                    <th class="th-responsiva"><strong>Nombre</strong></th>  
-                    <th class="th-responsiva"><strong>Dirección</strong></th>
-                    <th class="th-responsiva"><strong>Teléfono</strong></th>
-                    <th class="th-responsiva"><strong>Estatus</strong></th>
-                    <th class="th-responsiva"></th>
-                    <th class="th-responsiva"></th>
-                </tr>
-            </thead>
+                <BR>
+                <div style="overflow-x: auto;" id="results">
 
-            <tbody>
-                <?php
-                while($mostrar=mysqli_fetch_array($resultSelect)){
-                    ?>
-                    <tr>
-                        
-                        <td class="th-responsiva"><?php echo $mostrar['NombreHospital'] ?></td>
-                        <td class="th-responsiva"><?php echo $mostrar['Direccion'] ?></td>
-                        <td class="th-responsiva"><?php echo $mostrar['Telefono'] ?></td>
-                        <td class="th-responsiva"><?php echo $mostrar['Estatus'] ?></td>
+                    <TABLE CLASS="TABLA-RESPONSIVA" id="tabla">
 
-                        <td class="th-responsiva"><a href="modificarHospitales.php?  
+                        <thead>
+                            <tr>
+                                <th class="th-responsiva"><strong>Nombre</strong></th>
+                                <th class="th-responsiva"><strong>Dirección</strong></th>
+                                <th class="th-responsiva"><strong>Teléfono</strong></th>
+                                <th class="th-responsiva"><strong>Estatus</strong></th>
+                                <th class="th-responsiva"></th>
+                                <th class="th-responsiva"></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <?php
+                            while ($mostrar = mysqli_fetch_array($resultSelect)) {
+                            ?>
+                                <tr>
+
+                                    <td class="th-responsiva"><?php echo $mostrar['NombreHospital'] ?></td>
+                                    <td class="th-responsiva"><?php echo $mostrar['Direccion'] ?></td>
+                                    <td class="th-responsiva"><?php echo $mostrar['Telefono'] ?></td>
+                                    <td class="th-responsiva"><?php echo $mostrar['Estatus'] ?></td>
+
+                                    <td class="th-responsiva"><a href="modificarHospitales.php?  
                         hospital=<?php echo $mostrar['NombreHospital'] ?> &
                         direccion=<?php echo $mostrar['Direccion'] ?> &
                         telefono=<?php echo $mostrar['Telefono'] ?> &
                         estatus=<?php echo $mostrar['Estatus'] ?>">
-                        
-                            <img src="../img/icono.png" height="20px" width="20px">
-                            </a></td>
 
-                        <td class="th-responsiva"><a href="EliminarHospitales.php?
+                                            <img src="../img/icono.png" height="20px" width="20px">
+                                        </a></td>
+
+                                    <td class="th-responsiva"><a href="EliminarHospitales.php?
                         hospital=<?php echo $mostrar['NombreHospital'] ?>">
-                            <img src="../img/trash-var-flat.png" height="20px" width="20px">
-                        </a></td>
-                    </tr>
-                    <?php
+                                            <img src="../img/trash-var-flat.png" height="20px" width="20px">
+                                        </a></td>
+                                </tr>
+                            <?php
 
-                    }
-                   
-                    ?>
-            </tbody>
-        </TABLE>
-        </div>      
+                            }
 
-        
+                            ?>
+                        </tbody>
+                    </TABLE>
+                </div>
+
+
             </div>
             <div id="Registro" class="menuContent" style="display: none;">
-                <div class="titles">
+                <div class="title">
                     <h1>Registro de actividades</h1>
-                
+
 
                 </div>
             </div>
             <div id="Asignacion" class="menuContent" style="display: none;">
-                <div class="titles">
+                <div class="title">
                     <h1>Asignación</h1>
-                
+
 
                 </div>
             </div>
         </div>
     </div>
 
-    
+
 </body>
 
 

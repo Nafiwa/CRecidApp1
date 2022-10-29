@@ -57,7 +57,7 @@
 }
 
 .menu{
-  height: 150%;
+  height: 100%;
   width: max-content;
   background-color: #303030;
   padding: 20px;
@@ -320,7 +320,7 @@ img{
 /*                  CRecid team                */
 /*---------------------------------------------*/
 .titles{
-  padding: 20px;
+  padding: 5px;
 }
 
 
@@ -421,15 +421,70 @@ img{
   margin: 0px;
   padding: auto;
 }
-input[type=text], select {
-  width: 300px;
-  background-color: #FFF;
-  padding: 8px 10px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
+.formu label{
+  background-color: #E8FFFB;
+  color: rgb(7, 7, 7);
+  text-align: left;
+}
+.formu input{
+  width: 250px;
+  height: auto;
+  padding: 5px;
+  font-family: 'Inter';
+  border:#303030;
   border-radius: 6px;
-  box-sizing: border-box;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 50px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  font-feature-settings: 'calt' off;
+  color: #0000009a;
+  background-color: rgba(218, 216, 216, 0.63);
+}
+.formu select{
+  width: 250px;
+  height: auto;
+  padding: 5px;
+  font-family: 'Inter';
+  border:#474747;
+  border-radius: 6px;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 50px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  font-feature-settings: 'calt' off;
+  color: #0000009a;
+  background-color: rgba(231, 230, 230, 0.63);
+}
+.formu button{
+  display:block;
+  float: right;
+  width: 180px;
+  height: max-content;
+  text-decoration: none;
+  color: white;
+  background-color: #303030;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 25px;
+  margin-left: 50px;
+  border-radius: 6px;
+  border: none;
+}
+.formu button:hover{
+  background-color: #79BEB1;
+  color: black;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.formu button.active {
+  color: black;
+  background-color: #79BEB1;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .guardar button{
@@ -500,3 +555,11 @@ table th {
   color: white;
 }
 
+
+.arriba{
+  height: 25%;
+}
+
+.abajo{
+  height: 80%;
+}

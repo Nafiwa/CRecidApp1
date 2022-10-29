@@ -24,36 +24,48 @@ include_once("conexion.php");
             <div class="title"><h1>Usuarios</h1></div>
             <div class="sub"><h4>Añadir un nuevo Usuario</h4></div>
             
-           
+
             <div class="formu">
             <form action="QueryInsertU.php" id="frmAutentica" name="frmAutentica" method="post">
-                    <label for="usuario" >Usuario: &nbsp;&nbsp;&nbsp;</label>
-                    <input  type="text" id="usuario" name="usuario" placeholder="Ingresar matricula"><br>
-                    <label for="contrasena">Contraseña: &nbsp;</label>
-                    <input type="password" id="contrasena" name="contrasena" placeholder="********"><br><br>
-                    <label for="nombre" >Nombre: &nbsp;&nbsp;&nbsp;</label>
-                    <input  type="text" id="nombre" name="nombre" placeholder="Sofia"><br>
-                    <label for="apellidoP" >Apellido Paterno: &nbsp;&nbsp;&nbsp;</label>
-                    <input  type="text" id="apellidoP" name="apellidoP" placeholder="Garcia"><br>
-                    <label for="apellidoM">Apellido Materno:&nbsp; </label>
-                    <input type="text" id="apellidoM" name="apellidoM" placeholder="Flores"><br>
-                    
-                    <label for="tipoU">Tipo de Usuario: &nbsp;</label>
-
+                    <label for="usuario" >
+                        Usuario: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </label>
+                    <input  type="text" id="usuario" name="usuario" placeholder="Ingresar matricula">
+                    <br><br>
+                    <label for="contrasena" >
+                        Contraseña: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </label>
+                    <input type="password" id="Contrasena" name="contrasena" placeholder="********">
+                    <br><br>
+                    <label for="nombre" >
+                        Nombre: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </label>
+                    <input  type="text" id="nombre" name="nombre" placeholder="Sofia"><br><br>
+                    <label for="apellidoP" >Apellido Paterno: &nbsp;</label>
+                    <input  type="text" id="apellidoP" name="apellidoP" placeholder="Garcia">
+                    <br><br>
+                    <label for="apellidoM">Apellido Materno: </label>
+                    <input type="text" id="apellidoM" name="apellidoM" placeholder="Flores">
+                    <br><br>
+                    <label for="tipoU">Tipo de Usuario: &nbsp;&nbsp;</label>
                     <select name="tipoU" id="" require>
-                        <option value="">Tipo de Usuario</option>
+                        <option value="">Tipo de Usuario: &nbsp;&nbsp;</option>
                         <?php 
                         $v= mysqli_query($con, "SELECT * FROM tipousuario ");
                         while($tipoUsu= mysqli_fetch_row($v)){
                             ?>
                             <option value="<?php echo $tipoUsu[0] ?>"><?php echo $tipoUsu[1] ?></option>
                         <?php } ?>
-                    </select>
-
-                    <label for="estatus">Estatus: &nbsp;</label>
+                    </select><br><br>
+                    <label for="estatus">
+                        Estatus: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </label>
                     <input type="text" id="estatus" name="estatus" placeholder="Activo"><br><br>
                     <br>
-                    <input type="submit" value="Enviar" id="btnEnviar" name="btnEnviar" onclick="validaForma()">
+                    <button type="submit" value="Enviar" id="btnEnviar" name="btnEnviar" onclick="validaForma()">enviar</button>
                 
                     <tr class=blanco height="60px">
 			<td colspan="2">
