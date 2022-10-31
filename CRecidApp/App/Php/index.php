@@ -68,7 +68,11 @@ $resultSelectUsuarios = mysqli_query($con, $sqlSelectU);
                 <div class="title">
                     <h1>Usuarios</h1>
                 </div>
-                <button class="AnadirInt" onclick="Usuario()">Añadir nuevo Usuario &#10133;</button>
+                <div class="linebutton">
+                <button  onclick="Usuario()">Añadir nuevo Usuario &#10133;</button>
+                <br><br>
+                <button  onclick="Tipo()">Añadir nuevo Tipo de Usuario &#10133;</button>
+                </div>
                 <div class="abajo">
                     <!--empieza tabla de Tipo de usuarios registrados-->
 
@@ -80,7 +84,6 @@ $resultSelectUsuarios = mysqli_query($con, $sqlSelectU);
                             <thead>
                                 <tr>
                                     <th class="th-responsiva">Usuario</th>
-                                    <th class="th-responsiva">Contrasena</th>
                                     <th class="th-responsiva">Nombre</th>
                                     <th class="th-responsiva">Apellido Paterno</th>
                                     <th class="th-responsiva">Apellido Materno</th>
@@ -98,7 +101,6 @@ $resultSelectUsuarios = mysqli_query($con, $sqlSelectU);
                                 ?>
                                     <tr>
                                         <td class="th-responsiva"><?php echo $mostrar['Usuario'] ?></td>
-                                        <td class="th-responsiva"><?php echo $mostrar['Contrasena'] ?></td>
                                         <td class="th-responsiva"><?php echo $mostrar['Nombres'] ?></td>
                                         <td class="th-responsiva"><?php echo $mostrar['A_Paterno'] ?></td>
                                         <td class="th-responsiva"><?php echo $mostrar['A_Materno'] ?></td>
@@ -145,7 +147,7 @@ $resultSelectUsuarios = mysqli_query($con, $sqlSelectU);
                         <input type="submit" value="Buscar">
                     </form>
                 </div>
-
+                
                 <BR>
                 <div style="overflow-x: auto;" id="results">
 
