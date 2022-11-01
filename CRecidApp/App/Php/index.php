@@ -67,10 +67,11 @@ $resultSelectUsuarios = mysqli_query($con, $sqlSelectU);
                 </div>-->
                 <div class="title">
                     <h1>Usuarios</h1>
+                    <button  onclick="Usuario()">Añadir nuevo Usuario &#10133;</button>
                 </div>
-                <div class="linebutton">
-                <button  onclick="Usuario()">Añadir nuevo Usuario &#10133;</button>
-                <button  onclick="Tipo()">Añadir nuevo Tipo de Usuario &#10133;</button>
+                <div class="">
+                <button class="botont btn-group btn" onclick="Usuario()">Añadir nuevo Usuario &#10133;</button>
+                <button class="botont bouncy2 btn-group btn" onclick="Tipo()">Añadir nuevo Tipo de Usuario </button>
                 </div>
                 <div class="abajo">
                     <!--empieza tabla de Tipo de usuarios registrados-->
