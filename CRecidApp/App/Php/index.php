@@ -70,7 +70,6 @@ $resultSelectUsuarios = mysqli_query($con, $sqlSelectU);
                 </div>
                 <div class="linebutton">
                 <button  onclick="Usuario()">Añadir nuevo Usuario &#10133;</button>
-                <br><br>
                 <button  onclick="Tipo()">Añadir nuevo Tipo de Usuario &#10133;</button>
                 </div>
                 <div class="abajo">

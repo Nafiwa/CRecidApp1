@@ -556,6 +556,10 @@ table th {
 }
 
 
+.linebutton{
+  display: inline-flex;
+}
+
 .arriba{
   height: 25%;
 }
