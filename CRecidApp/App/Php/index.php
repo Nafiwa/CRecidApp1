@@ -15,7 +15,8 @@ $resultSelectTU = mysqli_query($con, $sqlSelectTU);
 $sqlSelectU = "SELECT * FROM usuarios";
 $resultSelectUsuarios = mysqli_query($con, $sqlSelectU);
 
-
+$sqlSelectA = "SELECT * FROM asignacion";
+$resultSelectAsignacion = mysqli_query($con, $sqlSelectA);
 
 
 ?>
@@ -67,12 +68,9 @@ $resultSelectUsuarios = mysqli_query($con, $sqlSelectU);
                 </div>-->
                 <div class="title">
                     <h1>Usuarios</h1>
-                    <button  onclick="Usuario()">Añadir nuevo Usuario &#10133;</button>
+                    <button  onclick="location.href='RegUsu.php'">Añadir nuevo Usuario &#10133;</button>
                 </div>
-                <div class="">
-                <button class="botont btn-group btn" onclick="Usuario()">Añadir nuevo Usuario &#10133;</button>
-                <button class="botont bouncy2 btn-group btn" onclick="Tipo()">Añadir nuevo Tipo de Usuario </button>
-                </div>
+            
                 <div class="abajo">
                     <!--empieza tabla de Tipo de usuarios registrados-->
 
@@ -138,7 +136,9 @@ $resultSelectUsuarios = mysqli_query($con, $sqlSelectU);
                     <h1>Hospitales</h1>
                 </div>
                 <br><br>
-                <button onclick="Hospital()">Añadir Hospital</button>
+             
+                <button onclick="window.location.href='RegHosp.php'">Añadir Hospital</button>
+               
                 <br><br>
 
                 <div>
@@ -200,6 +200,8 @@ $resultSelectUsuarios = mysqli_query($con, $sqlSelectU);
 
 
             </div>
+
+
             <div id="Registro" class="menuContent" style="display: none;">
                 <div class="title">
                     <h1>Registro de actividades</h1>
@@ -207,12 +209,83 @@ $resultSelectUsuarios = mysqli_query($con, $sqlSelectU);
 
                 </div>
             </div>
+
+            <!-- AQUI VA ASIGNACIOOON-->
+            
             <div id="Asignacion" class="menuContent" style="display: none;">
                 <div class="title">
                     <h1>Asignación</h1>
+                    </div>
+                    <button onclick="window.location.href='RegAsignacion.php'">Nueva Asignación</button>
+               
+                <br><br>
 
-
+                <div>
+                    <form action="BuscarAsignacion.php" method="post">
+                        <input type="text" name="buscar">
+                        <input type="submit" value="Buscar">
+                    </form>
                 </div>
+                
+                <BR>
+                <div style="overflow-x: auto;" id="results">
+
+                    <TABLE CLASS="TABLA-RESPONSIVA" id="tabla">
+
+                        <thead>
+                            <tr>
+                                <th class="th-responsiva"><strong>ID</strong></th>
+                                <th class="th-responsiva"><strong>Fecha de Asignación</strong></th>
+                                <th class="th-responsiva"><strong>Usuario</strong></th>
+                                <th class="th-responsiva"><strong>Hospital</strong></th>
+                                <th class="th-responsiva"><strong>Turno</strong></th>
+                                <th class="th-responsiva"><strong>Area</strong></th>
+                                <th class="th-responsiva"></th>
+                                <th class="th-responsiva"></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <?php
+                            while ($mostrar = mysqli_fetch_array($resultSelectAsignacion)) {
+                            ?>
+                                <tr>
+
+                                    <td class="th-responsiva"><?php echo $mostrar['idAsignacion'] ?></td>
+                                    <td class="th-responsiva"><?php echo $mostrar['FechaAsign'] ?></td>
+                                    <td class="th-responsiva"><?php echo $mostrar['Usuario'] ?></td>
+                                    <td class="th-responsiva"><?php echo $mostrar['NombreHospital'] ?></td>
+                                    <td class="th-responsiva"><?php echo $mostrar['idTurnos'] ?></td>
+                                    <td class="th-responsiva"><?php echo $mostrar['idAreas'] ?></td>
+
+                                    <td class="th-responsiva"><a href="modificarAsignacion.php?  
+                        asignacion=<?php echo $mostrar['idAsignacion'] ?> &
+                        fecha=<?php echo $mostrar['FechaAsign'] ?> &
+                        usuario=<?php echo $mostrar['Usuario'] ?> &
+                        hospital=<?php echo $mostrar['NombreHospital'] ?> &
+                        turno=<?php echo $mostrar['idTurnos'] ?> &
+                        area=<?php echo $mostrar['idAreas'] ?>">
+
+                                            <img src="../img/icono.png" height="20px" width="20px">
+                                        </a></td>
+
+                                    <td class="th-responsiva"><a href="EliminarAsignacion.php?
+                        asignacion=<?php echo $mostrar['idAsignacion'] ?>">
+                                            <img src="../img/trash-var-flat.png" height="20px" width="20px">
+                                        </a></td>
+                                </tr>
+                            <?php
+
+                            }
+
+                            ?>
+                        </tbody>
+                    </TABLE>
+                </div>
+
+
+
+                
             </div>
         </div>
     </div>

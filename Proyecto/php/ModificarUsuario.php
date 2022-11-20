@@ -3,9 +3,15 @@ include_once("conexion.php");
 $con=mysqli_connect('localhost','root','','crecid');
 
 error_reporting(0);
-        $hospital = $_GET["hospital"];
-        $direccion = $_GET["direccion"];
-        $telefono = $_GET["telefono"];
+$usuariotipo = $_GET["id"];
+$usuario = $_GET["usuario"];
+$contrasena = $_GET["contrasena"];
+$nombre = $_GET["nombre"];
+$apellidoP = $_GET["apellidoP"];
+$apellidoM = $_GET["apellidoM"];
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,9 +33,7 @@ error_reporting(0);
 <body>
     <div class="main">
         <div class="menu">
-            <a href="#Internos">
             <img src="../img/logoCrecid.png"/>
-            </a>
             <br /><br /><br />
             <button class="tablinks" onclick="tabs(event, 'Usuarios' )">Usuarios</button>
             <br />
@@ -46,50 +50,48 @@ error_reporting(0);
         <div class="body">
         <div class="regitrarH">
             <div class="title"><h1>Usuarios</h1></div>
-            <div class="sub"><h4>Añadir un nuevo Usuario</h4></div>
+            <div class="sub"><h4>Actualizar un nuevo Usuario</h4></div>
             
 
             <div class="formu">
-            <form action="QueryInsertU.php" id="frmAutentica" name="frmAutentica" method="post">
+            <form action="ModU.php" id="frmAutentica" name="frmAutentica" method="post">
                     <label for="usuario" >
                         Usuario: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </label>
-                    <input  type="text" id="usuario" name="usuario" placeholder="Ingresar matricula">
+                    <input  type="text" id="usuario" name="usuario" value="<?=$usuario?>">
                     <br><br>
                     <label for="contrasena" >
                         Contraseña: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </label>
-                    <input type="password" id="Contrasena" name="contrasena" placeholder="********">
+                    <input type="password" id="contrasena" name="contrasena" value="<?=$contrasena?>">
                     <br><br>
                     <label for="nombre" >
                         Nombre: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </label>
-                    <input  type="text" id="nombre" name="nombre" placeholder="Sofia"><br><br>
+                    <input  type="text" id="nombre" name="nombre" value="<?=$nombre?>"><br><br>
+
                     <label for="apellidoP" >Apellido Paterno: &nbsp;</label>
-                    <input  type="text" id="apellidoP" name="apellidoP" placeholder="Garcia">
+                    <input  type="text" id="apellidoP" name="apellidoP" value="<?=$apellidoP?>">
                     <br><br>
                     <label for="apellidoM">Apellido Materno: </label>
-                    <input type="text" id="apellidoM" name="apellidoM" placeholder="Flores">
+                    <input type="text" id="apellidoM" name="apellidoM" value="<?=$apellidoM?>">
                     <br><br>
-                    <label for="tipoU">Tipo de Usuario: &nbsp;&nbsp;</label>
-                    <select name="tipoU" id="" require>
-                        <option value="">Tipo de Usuario: &nbsp;&nbsp;</option>
+                    
+                    <label for="id">Tipo de Usuario: &nbsp;&nbsp;</label>
+                    <select name="id" >
+                    <option value="<?php echo $usuariotipo;?>"selected> <?php echo $usuariotipo;?></option>  
                         <?php 
                         $v= mysqli_query($con, "SELECT * FROM tipousuario ");
                         while($tipoUsu= mysqli_fetch_row($v)){
                             ?>
-                            <option value="<?php echo $tipoUsu[0] ?>"><?php echo $tipoUsu[1] ?></option>
+                        <option value="<?php echo $tipoUsu[0] ?>"><?php echo $tipoUsu[1] ?></option>
                         <?php } ?>
-                    </select><br><br>
-                    <label for="estatus">
-                        Estatus: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </label>
-                    <input type="text" id="estatus" name="estatus" placeholder="Activo"><br><br>
-                    <br>
-                    <button type="submit" value="Enviar" id="btnEnviar" name="btnEnviar" onclick="validaForma()">enviar</button>
+                    </select><br><br><br><br>
+
+
+                    <button type="submit" value="Enviar" id="btnEnviar" name="btnEnviar" onclick="validaForma()">Actualizar</button>
                     <td><a href="index.php">Cancelar</a></td>   
                     <tr class=blanco height="60px">
 			<td colspan="2">
@@ -104,53 +106,7 @@ error_reporting(0);
 
 
         </div>
-
-        <script type="text/javascript" src="../javaScript/jquery.js"></script>
-<script type="text/javascript" src="../javaScript/jquery.validate.min.js"></script>
-<script type="text/javascript">
-
-function validaForma(){
-		$("#frmAutentica").validate({
-			rules: {
-				usuario: "required",
-				contrasena: "required",
-                apellidoP: "required",
-                apellidoM: "required",
-                estatus: "required"
-			},
-			messages: {
-				usuario: " <br> Se quiere este dato.",
-				contrasena: "Se requiere este dato.",
-                apellidoP: "Se requiere este dato.",
-                apellidoM: "Se requiere este dato.",
-                estatus: "Se requiere este dato."
-			},
-			
-			submitHandler: function(frmAutentica) {
-				$.ajax({
-			
-					url: 'QueryInsertU.php',
-			
-					type: 'post',
-				
-					data:$('#frmAutentica').serialize(),
-			
-					success: function(response) {
-						$('#msgError').html(response);
-					}
-				});
-			}
-
-            
-		});
-        
-}
-
-</script>
-            
-           
         </div>
-</div>
 </body>
 
 </html>

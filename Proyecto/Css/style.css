@@ -1,0 +1,669 @@
+/*-----------------------------------------------------------------------------------
+            This style sheet belongs to the CRecid app, if it is modificated,
+            please document de name of de author and date
+
+            Esta hoja de estilos pertenece a la aplicación CRecid, si esta es 
+            modificada, favor de documentar el nombre del autor y fecha
+
+            author:CRecid team ver 1.0 (17/09/2022)
+                              .ver 1.1 (15/10/2022)
+                              .ver 1.2 (10/11/2022)
+
+-----------------------------------------------------------------------------------*/
+
+/*---------------------------------------------*/
+/*      This block contins formato             */
+/*              date : 11/09/22                */
+/*                  CRecid team                */
+/*---------------------------------------------*/
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Inter", sans-serif;
+  background-color: #e8fffb;
+  size-adjust: block;
+}
+
+/*---------------------------------------------*/
+/*      This block contins logo               */
+/*              date : 11/09/22                */
+/*                  CRecid team                */
+/*---------------------------------------------*/
+.logo {
+  text-decoration: none;
+  border: 1px solid #303030;
+}
+
+/*---------------------------------------------*/
+/*      This block contins main              */
+/*              date : 11/09/22                */
+/*                  CRecid team                */
+/*---------------------------------------------*/
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+}
+
+/*---------------------------------------------*/
+/*      This block contins login               */
+/*              date : 11/09/22                */
+/*                  CRecid team                */
+/*---------------------------------------------*/
+.login {
+  width: max-content;
+  background-color: #303030;
+  padding: 20px;
+}
+
+.menu {
+  height: 100%;
+  width: max-content;
+  background-color: #303030;
+  padding: 20px;
+  display: block;
+}
+
+.login form {
+  display: flex;
+  background-color: #303030;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 4px;
+  position: absolute;
+  width: 345px;
+  height: 74px;
+  left: 20px;
+  top: 422px;
+}
+
+.login label {
+  background-color: #303030;
+  color: #fff;
+  text-align: left;
+}
+
+.login input {
+  width: 300px;
+  height: 50px;
+  padding: 10px;
+  font-family: "Inter";
+  border: none;
+  border-radius: 6px;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 50px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  font-feature-settings: "calt" off;
+  color: #0000009a;
+}
+
+.login button {
+  display: inline-block;
+  width: 180px;
+  height: max-content;
+  text-decoration: none;
+  color: white;
+  background-color: #303030;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 25px;
+  margin-left: 50px;
+  border-radius: 6px;
+  border: none;
+}
+
+.login button:hover {
+  background-color: #79beb1;
+  color: black;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.login button.active {
+  color: black;
+  background-color: #79beb1;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/*---------------------------------------------*/
+/*      This block contins menu               */
+/*              date : 11/09/22                */
+/*                  CRecid team                */
+/*---------------------------------------------*/
+.menu button {
+  display: inline-block;
+  width: 390px;
+  height: max-content;
+  text-decoration: none;
+  color: white;
+  background-color: #303030;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 30px;
+  border: none;
+}
+
+.menu button:hover {
+  background-color: #79beb1;
+  color: black;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.menu button.active {
+  color: black;
+  background-color: #79beb1;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/*---------------------------------------------*/
+/*      This block contins body             */
+/*              date : 11/09/22                */
+/*                  CRecid team                */
+/*---------------------------------------------*/
+.body {
+  width:100%;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.body h1 {
+  color: #79beb1;
+  margin: 5px;
+  font-size: 60px;
+  letter-spacing: 4px;
+}
+
+.anadir button {
+  float: right;
+  width: 180px;
+  height: 60px;
+  align-content: center;
+  text-decoration: none;
+  color: white;
+  background-color: #303030;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+}
+
+.anadir button:hover {
+  background-color: #79beb1;
+  color: black;
+  transition: 0.5s;
+  letter-spacing: 3px;
+}
+
+.anadir button.active {
+  color: black;
+  background-color: #79beb1;
+  letter-spacing: 3px;
+}
+
+/*---------------------------------------------*/
+/*      This block contins RegHosp             */
+/*              date : 11/09/22                */
+/*                  CRecid team                */
+/*---------------------------------------------*/
+.regitrarH {
+  width: 530px;
+  height: 430px;
+  background: #e8fffb;
+  padding: 20px;
+  margin: 0px;
+}
+
+.title {
+  font-size: 26px;
+  color: #79beb1;
+  padding: 5px 5px;
+  display: flex;
+}
+
+.sub {
+  font-size: 18px;
+  color: #474747;
+  padding: 5px 5px 5px 150px;
+  display: block;
+}
+
+.tags {
+  font-size: 16px;
+  color: #303030;
+  padding: 5px 50px 5px 5px;
+  display: flex;
+}
+
+.formu {
+  margin: 0px;
+  padding: auto;
+}
+.formu label {
+  background-color: #e8fffb;
+  color: rgb(7, 7, 7);
+  text-align: left;
+}
+
+.formu input {
+  width: 250px;
+  height: auto;
+  padding: 5px;
+  font-family: "Inter";
+  border: #303030;
+  border-radius: 6px;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 50px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  font-feature-settings: "calt" off;
+  color: #0000009a;
+  background-color: rgba(224, 224, 224, 0.63);
+}
+
+.formu select {
+  width: 250px;
+  height: auto;
+  padding: 5px;
+  font-family: "Inter";
+  border: #474747;
+  border-radius: 6px;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 50px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  font-feature-settings: "calt" off;
+  color: #0000009a;
+  background-color: rgba(231, 230, 230, 0.63);
+}
+
+.formu button {
+  display: inline-block;
+  width: 180px;
+  height: max-content;
+  text-decoration: none;
+  color: white;
+  background-color: #303030;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 5px;
+  margin-left: 50px;
+  border-radius: 6px;
+  border: none;
+}
+
+.formu button:hover {
+  background-color: #79beb1;
+  color: black;
+  transition: 0.5s;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.formu button.active {
+  color: black;
+  background-color: #79beb1;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.formu a:link, .formu a:visited {
+  width: 180px;
+  height: max-content;
+  align-content: center;
+  text-decoration: none;
+  color: white;
+  background-color: #303030;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+}
+
+.formu a:hover, .formu a:active {
+  background-color: #79beb1;
+  color: black;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/*---------------------------------------------*/
+/*      This block contins Tablas              */
+/*              date : 11/09/22                */
+/*                  CRecid team                */
+/*---------------------------------------------*/
+
+table th {
+  padding-top: 12px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #303030;
+  color: rgb(255, 255, 255);
+}
+
+.TABLA-RESPONSIVA {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 5%;
+  table-layout: fixed;
+  
+}
+
+.tr-responsiva:nth-child(even) {
+  background-color: #191d1c;
+}
+
+.tr-responsiva:hover {
+  background-color: #303030;
+}
+
+.th-responsiva {
+  text-align: left;
+  padding: 6px;
+  background-color: #e8fffb;
+  color: black;
+}
+
+.th-responsiva1 {
+  text-align: left;
+  padding: 6px;
+  background: #79beb1;
+  color: #303030;
+}
+
+.th-content {
+  white-space: nowrap;
+  width: 100px;
+}
+
+/*---------------------------------------------*/
+/*      This block contins tabs reg            */
+/*              date : 11/09/22                */
+/*                  CRecid team                */
+/*---------------------------------------------*/
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 50%;
+}
+
+.tablink:hover {
+  background-color: #79beb1;
+  color: #303030;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: #303030;
+  background-color: #303030;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {
+  height: 100%;
+  background-color: #e8fffb;
+  background-image: linear-gradient(180deg, #e8fffb, #e8fffb, #e8fffb, #79beb1);
+}
+
+#News {
+  height: 100%;
+  background-color: #e8fffb;
+  background-image: linear-gradient(180deg, #e8fffb, #e8fffb, #e8fffb, #79beb1);
+}
+
+
+
+
+/* --------------------------------------------- */
+.env button {
+  float: right;
+  width: 100px;
+  height: 20px;
+  align-content: center;
+  text-decoration: none;
+  color: white;
+  background-color: #303030;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+}
+
+.env button:hover {
+  background-color: #79beb1;
+  color: black;
+  transition: 0.5s;
+  letter-spacing: 3px;
+}
+
+.env button.active {
+  color: black;
+  background-color: #79beb1;
+  letter-spacing: 3px;
+} 
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+
+
+.topnav {
+  overflow: hidden;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 450px;
+}
+
+.topnav p {
+  font-size: 60px;
+  color: #79beb1;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 1px 8px;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.topnav .login-container button.titles {
+  float: right;
+  width: 200px;
+  height: 70px;
+  align-content: center;
+  text-decoration: none;
+  color: white;
+  background-color: #303030;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+}
+
+.topnav .login-container button.titles:hover {
+  background-color: #79beb1;
+  color: black;
+  transition: 0.5s;
+  letter-spacing: 3px;
+}
+
+.topnav .login-container button.buscar {
+  width: 80px;
+  height: 40px;
+  align-content: center;
+  text-decoration: none;
+  color: white;
+  background-color: #303030;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+}
+
+.topnav .login-container button.buscar:hover {
+  background-color: #79beb1;
+  color: black;
+  transition: 0.5s;
+  letter-spacing: 3px;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .login-container {
+    float: none;
+  }
+
+  .topnav p,
+  .topnav input[type=text],
+  .topnav .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+
+/* ---------------------------------------------- */
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  width: auto;
+  padding: 256px 17px;
+  color: rgb(0, 0, 0);
+  background-color: #303030;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.prev{
+  left: 0;
+  border-radius: 3px;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  color: white;
+  background-color: #79beb1c4;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
+/* ---------------------------------------------- */
+
+i{
+  padding: 5px;
+  margin-top: 20px;
+  margin-left: -40px;
+  cursor: pointer;
+  color: #303030;
+}
+
+.barra{
+  overflow-y: scroll;
+}
